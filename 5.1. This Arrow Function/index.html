@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Lanjutan</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin: 50px auto;
+        transition: 0.3s width, 0.3s height 0.3s, 0.3s margin-top 0.3s,
+          1s background-color;
+      }
+
+      .size {
+        width: 150px;
+        height: 150px;
+        margin-top: 25px;
+      }
+
+      .caption {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This pd Arrow Function</h1>
+
+    <div class="box"></div>
+
+    <script>
+      // Konsep THIS pada Arrow Function
+
+      //   Constructor Function
+      //   const Mahasiswa = function () {
+      //     this.nama = "Gerald";
+      //     this.umur = 33;
+      //     this.sayHello = function () {
+      //       console.log(
+      //         `Halo, nama Saya ${this.nama} dan Saya ber-umur ${this.umur}`
+      //       );
+      //     };
+      //   };
+      //   const gerald = new Mahasiswa();
+
+      //   Arrow Function
+      //   const Mahasiswa = function () {
+      //     this.nama = "Gerald";
+      //     this.umur = 33;
+      //     this.sayHello = () => {
+      //       console.log(
+      //         `Halo, nama Saya ${this.nama} dan Saya ber-umur ${this.umur}`
+      //       );
+      //     };
+      //   };
+      //   const gerald = new Mahasiswa();
+
+      //   Contoh penggunaan
+      const box = document.querySelector(".box");
+      box.addEventListener("click", function () {
+        let satu = "size";
+        let dua = "caption";
+
+        if (this.classList.contains(satu)) {
+          [satu, dua] = [dua, satu];
+        }
+
+        this.classList.toggle(satu);
+
+        setTimeout(() => {
+          this.classList.toggle(dua);
+        }, 600);
+      });
+    </script>
+  </body>
+</html>

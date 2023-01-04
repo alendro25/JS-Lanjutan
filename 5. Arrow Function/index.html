@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Lanjutan</title>
+  </head>
+  <body>
+    <h1>Arrow Function</h1>
+    <script>
+      // Function Expression
+      //   const tampilNama = function (nama) {
+      //     return `Hallo, ${nama}!`;
+      //   };
+      //   console.log(tampilNama("Gerald"));
+
+      //  Cara membuat Arrow Function
+      //  Arrow Function
+      //   const tampilNama = (nama) => {
+      //     return `Hello, ${nama}!`;
+      //   };
+      //   console.log(tampilNama("Gerald"));
+
+      //   const tampilNama = (nama, waktu) => {
+      //     return `Hello, ${nama}. Selamat ${waktu}!`;
+      //   };
+      //   console.log(tampilNama("Gerald", "Siang"));
+
+      //   Implisit Return
+      //   Keterangan :
+      // - Kalau parameter hanya satu tidak perlu kurung boleh
+      // - Kalau return juga hanya satu tidak perlu di beri kurung kurawal boleh
+      const tampilNama = (nama) => `Hello, ${nama}! `;
+      console.log(tampilNama("Gerald"));
+
+      const tanpaParameter = () => "Ini contoh tanpa paramter";
+      console.log(tanpaParameter());
+
+      //  Contoh Kasus:
+      let mahasiswa = ["Gerald", "Aditya", "Farid"];
+
+      /*
+    Menghitung jumlah huruf dari setiap index array mahasiswa
+
+    Dikerjakan menggunakan Function declaration, Arrow Function
+    */
+
+      // Function Declaration
+      //   let jumlahHuruf = mahasiswa.map(function (nama) {
+      //     return nama.length;
+      //   });
+      //   console.log(jumlahHuruf);
+
+      // Arrow Function
+      //   let jumlahHuruf = mahasiswa.map((nama) => nama.length);
+      //   console.log(jumlahHuruf);
+
+      //   Arrow Function yg mengembalikan nilai Object
+      let jumlahHuruf = mahasiswa.map((nama) => ({
+        nama: nama,
+        jmlHuruf: nama.length,
+      }));
+      console.log(jumlahHuruf);
+      console.table(jumlahHuruf);
+    </script>
+  </body>
+</html>
