@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Lanjutan</title>
+  </head>
+  <body>
+    <h1>Closure</h1>
+
+    <script>   
+      //  Contoh 1 - Counter
+      console.log('--- Contoh 1 - Counter ---');
+      let add = function () {
+        let counter = 0;
+        return function () {
+          return ++counter;
+        };
+      };
+
+      let a = add();
+
+      console.log(a());
+      console.log(a());
+      console.log(a());
+
+      console.log('\n');
+
+      // Contoh 2 - Ucapan Sapaan
+      console.log('--- Contoh 2 - Ucapan Sapaan ---');
+      function ucapSalam(waktu) {
+        return function (nama) {
+          console.log(`Halo ${nama}, Selamat ${waktu}. Have a Nice Day!`);
+        }
+      }
+
+      let selamatPagi = ucapSalam('Pagi');
+      let selamatSiang = ucapSalam('Siang');
+      let selamatMalam = ucapSalam('Malam');
+
+      selamatPagi('Gerald');
+      selamatSiang('Ibrahim');
+      selamatMalam('Aditya');
+    </script>
+  </body>
+</html>

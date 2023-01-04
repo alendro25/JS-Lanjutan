@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Lanjutan</title>
+  </head>
+  <body>
+    <h1>Execution Context, Hoisting, dan Scope</h1>
+
+    <script>
+      // 2.1 Execution Context, Hoisting & Scope
+
+      //   console.log(nama);
+      //   var nama = "Gerald";
+
+      // --- Creation Phase pd Global Context ---
+      // nama var = undefined
+      // nama function = fn()
+      // Hoisting
+      // window = global object
+      // this = window
+
+      // --- Execution Phase ---
+
+      //   var nama = "Gerald";
+      //   var umur = 22;
+
+      //   console.log(sayHello());
+
+      //   function sayHello() {
+      //     return `Halo, nama Saya ${nama}, Saya berumur ${umur} tahun.`;
+      //   }
+
+      //   Function membuat Local Execution Context
+      //   Yang di dalamnya terdapat Creation & Execution Phase
+      //   window
+      //   arguments
+      // hoisting
+
+      //   var nama = "Gerald";
+      //   var username = "@alendro25";
+
+      //   function cetakURL(username) {
+      //     var instagramURL = "https://www.instagram.com/";
+      //     return instagramURL + username;
+      //   }
+
+      //   console.log(cetakURL(username));
+
+      //   function a() {
+      //     console.log("A");
+
+      //     function b() {
+      //       console.log("B");
+
+      //       function c() {
+      //         console.log("C");
+      //       }
+      //       c();
+      //     }
+      //     b();
+      //   }
+      //   a();
+
+      function satu() {
+        var nama = "Gerald";
+        console.log(nama);
+      }
+
+      function dua() {
+        console.log(nama);
+      }
+
+      console.log(nama);
+      var nama = "Erik";
+      satu();
+      dua("Doddy");
+      console.log(nama);
+    </script>
+  </body>
+</html>
