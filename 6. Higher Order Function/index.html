@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Lanjutan</title>
+  </head>
+  <body>
+    <h1>Higher Order Function</h1>
+    <script>
+      /*
+      "Function yg beroperasi pada function yg lain.
+       Baik digunakan dalam argument, maupun sebagai
+       return value." -- Eloquentjavascript.net
+
+       Contoh:
+       A.
+          function kerjakanTugas(matakuliah, selesai){
+            console.log(`Mulai Mengerjakan Tugas ${matakuliah}...`);
+            selesai();
+          }
+
+          function selesai(){
+            alert('Selesai Mengerjakan Tugas!');
+          }
+
+          kerjakanTugas('Pemrograman Web', selesai);
+          maka function "kerjakanTugas" bisa di katakan HIGH ORDER FUNCTION
+          dan ada argumen(selesai) berupa function ('Pemrograman Web', selesai), maka
+          disebut CALLBACK
+
+
+        B.
+           setTimeout(function(){
+            console.log('Hello World!');
+           }, 1000);
+
+        C.
+          function ucapakanSalam(waktu){
+            return function (nama){
+              console.log(`Hallo ${nama}, Selamat ${waktu}, Semoga harimu menyenangkan!`);
+            }
+          }
+
+          let selamatMalam = ucapkanSalam('Malam');
+          console.log(selamatMalam('Gerald'));
+
+      
+      Kenapa pakai Higher Order Function?
+      A. Abstraksi
+         Agar mempermudah dalam membuat program yang kompleks,
+         atau memecah sebuah program yang kompleks agar mudah di telusuri(Menyembunyikan kerumitan)
+      */
+
+      // let total = 0,
+      //   count = 1;
+      // while (count <= 10) {
+      //   total += count;
+      //   count += 1;
+      // }
+
+      // console.log(total);
+
+      function repeat(n, action) {
+        for (let i = 0; i < n; i++) {
+          action(i);
+        }
+      }
+
+      repeat(10, console.log);
+      repeat(3, alert);
+    </script>
+  </body>
+</html>
