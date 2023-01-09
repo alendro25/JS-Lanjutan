@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Lanjutan</title>
+
+    <style>
+      .hl {
+        background-color: salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tagged Template Literals</h1>
+
+    <div class="container"></div>
+
+    <script>
+      // Tagged Templates
+      const nama = "Gerald Alessandro";
+      const umur = 23;
+      const email = "alendro25@gmail.com";
+
+      //   function coba(strings, ...values) {
+      //     // let result = "";
+
+      //     // strings.forEach((str, i) => {
+      //     //   result += `${str}${values[i] || ""}`;
+      //     // });
+
+      //     // return result;
+
+      //     // Atau pakai .reduce()
+      //     return strings.reduce(
+      //       (result, str, i) => `${result}${str}${values[i] || ""}`,
+      //       ""
+      //     );
+      //   }
+
+      //   const str = coba`Halo, nama Saya ${nama}, Saya ${umur} tahun.`;
+      //   console.log(str);
+
+      // Highlight
+      function highlight(strings, ...values) {
+        return strings.reduce(
+          (result, str, i) =>
+            `${result}${str}<span class="hl">${values[i] || ""}</span>`,
+          ""
+        );
+      }
+
+      const str = highlight`Halo, nama Saya ${nama}, Saya ${umur} tahun. Dan email Saya : ${email}`;
+
+      const container = document.querySelector(".container");
+
+      container.innerHTML = str;
+    </script>
+  </body>
+</html>
