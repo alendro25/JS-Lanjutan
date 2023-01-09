@@ -33,5 +33,8 @@ const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 // Cari angka>5
 // Setelah itu *3
 // Kemudian di Jumlahkan
-const hasil = angka.filter(a => a>5).map(a => a*3).reduce((acc, cur) => acc+cur);
+const hasil = angka
+  .filter((a) => a > 5)
+  .map((a) => a * 3)
+  .reduce((acc, cur) => acc + cur);
 console.log(hasil);
