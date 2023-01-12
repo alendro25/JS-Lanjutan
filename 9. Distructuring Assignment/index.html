@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Lanjutan</title>
+  </head>
+  <body>
+    <h1>Distructuring Assignment</h1>
+
+    <script>
+      // Disctructuring Variable / Assignment
+
+      //   --- Distructuring Array ---
+      //     1. Cara umumnya
+      //   const perkenalan = ["Halo", "nama", "Saya", "Gerald A.T"];
+      //   const salam = perkenalan[0];
+      //   const nama = perkenalan[3];
+      //   console.log(nama);
+
+      //     2. Menggunakan Distructuring Array
+      //   const perkenalan = ["Halo", "nama", "Saya", "Gerald A.T"];
+
+      //   const [a, b, c, d] = perkenalan;
+      //    atau
+      //   const [a, , , d] = perkenalan; untuk skip nilai b dan c
+      //   console.log(a);
+      //   console.log(d);
+
+      //   --- Swap Items ---
+      //   let a = 1;
+      //   let b = 2;
+      //   console.log(a);
+      //   console.log(b);
+      //   [a, b] = [b, a];
+      //   console.log(a);
+      //   console.log(b);
+
+      //   --- return value pada function ---
+      //   function coba() {
+      //     return [1, 2];
+      //   }
+
+      //   const [a, b] = coba();
+      //   console.log(a);
+
+      //   --- Rest Parameter ---
+      //   const [a, ...values] = [1, 2, 3, 4, 5];
+      //   console.log(a);
+      //   console.log(values);
+
+      //   --- Distructuring Object ---
+      //   const mhs = {
+      //     nama: "Gerald Alessandro Timothy",
+      //     umur: 23,
+      //     email: "alendro25@gmail.com",
+      //   };
+
+      //   const { nama, umur, email } = mhs;
+      //   console.log(umur);
+
+      //   --- Assignment tanpa deklarasi Object ---
+      //   ({ nama, umur } = { nama: "Gerald Alessandro Timothy", umur: 23 });
+      //   console.log(email);
+
+      // --- Assign ke variabel baru ---
+      //   const mhs = {
+      //     nama: "Gerald Alessandro Timothy",
+      //     umur: 23,
+      //     email: "alendro25@gmail.com",
+      //   };
+
+      //   const { nama: n, umur: u, email: e } = mhs;
+      //   console.log(n);
+
+      //   --- Memberikan nilai default value ---
+      //   const mhs = {
+      //     nama: "Gerald Alessandro Timothy",
+      //     umur: 23,
+      //     // email: "alendro25@gmail.com",
+      //   };
+
+      //   const { nama, umur, email: e = "email@default.com" } = mhs;
+      //   console.log(e);
+
+      //   --- Object Rest Parameter ---
+      //   const mhs = {
+      //     nama: "Gerald Alessandro Timothy",
+      //     umur: 23,
+      //     email: "alendro25@gmail.com",
+      //   };
+
+      //   const { nama, ...values } = mhs;
+      //   console.log(values);
+
+      //   --- Mengambil field pada object, setelah dikirim sbg parameter untuk function ---
+      const mhs = {
+        id: 123,
+        nama: "Gerald Alessandro Timothy",
+        umur: 23,
+        email: "alendro25@gmail.com",
+      };
+
+      function getIdMhs({ id, nama }) {
+        return id;
+      }
+
+      console.log(getIdMhs(mhs));
+    </script>
+  </body>
+</html>
