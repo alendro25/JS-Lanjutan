@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Lanjutan</title>
+  </head>
+  <body>
+    <h1>Rest Parameter</h1>
+
+    <script>
+      // -- Rest Parameter --
+      //   function myFunc(a, b, ...myArgs) {
+      //     // return `
+      //     // a = ${a}
+      //     // b = ${b}
+      //     // myArgs = ${myArgs}`;
+      //     // return myArgs;
+      //     // return Array.from(arguments);
+      //     return [...arguments];
+      //   }
+
+      //   console.log(myFunc(1, 2, 3, 4, 5));
+
+      //   function jumlahkan(...angka) {
+      //     //     let total = 0;
+      //     //     for (const a of angka) {
+      //     //       total += a;
+      //     //     }
+      //     //     return total;
+      //     // return angka.reduce((a, b) => a + b);
+      //   }
+
+      //   console.log(jumlahkan(1, 2, 3, 4, 5));
+
+      // -- Array Distructuring --
+      //   const kelompok1 = ["Gerald", "Farid", "Aditya", "Ibrahim", "Dhany"];
+
+      //   const [ketua, wakil, ...anggota] = kelompok1;
+      //   console.log(ketua);
+
+      // -- Object Distructuring --
+      //   const teams = {
+      //     pm: "Gerald",
+      //     frontEnd1: "Aditya",
+      //     frontEnd2: "Dhany",
+      //     backEnd: "Ibrahim",
+      //     ux: "Farid",
+      //     devOps: "Dika",
+      //   };
+
+      //   const { pm, ...myTeams } = teams;
+      //   console.log(myTeams);
+
+      // --- Filter ---
+      function filterBy(type, ...values) {
+        return values.filter((v) => typeof v === type);
+      }
+
+      console.log(
+        filterBy("number", 1, 2, "Gerald", false, 10, true, "Aditya")
+      );
+    </script>
+  </body>
+</html>
