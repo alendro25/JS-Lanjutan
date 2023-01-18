@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Lanjutan</title>
+  </head>
+  <body>
+    <h1>Callback</h1>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Callback
+      // Synchronous Callback
+      //   function halo(nama) {
+      //     alert(`Hallo, ${nama}`);
+      //   }
+
+      //   function tampilkanPesan(callback) {
+      //     const nama = prompt("Masukan Nama : ");
+      //     callback(nama);
+      //   }
+
+      //   tampilkanPesan((nama) => {
+      //     alert(`Hallo, ${nama}`);
+      //   });
+
+      // const mhs = [
+      //   {
+      //     nama: "Gerald Alessandro Timothy",
+      //     nim: "2018420126",
+      //     email: "alendro25@gmail.com",
+      //     jurusan: "Teknik Informatika",
+      //     idDosenWali: 1,
+      //   },
+      //   {
+      //     nama: "Aditya Hernanda",
+      //     nim: "2018410002",
+      //     email: "adityahernanda054@gmail.com",
+      //     jurusan: "Teknik Sipil",
+      //     idDosenWali: 2,
+      //   },
+      //   {
+      //     nama: "Ibrahim Al-Fauzan",
+      //     nim: "2018420100",
+      //     email: "aimfauzan@gmail.com",
+      //     jurusan: "Teknik Geomatika",
+      //     idDosenWali: 3,
+      //   },
+      // ];
+
+      //   console.log("--- Mulai ---");
+      //   mhs.forEach((m) => {
+      //     for (let i = 0; i < 10000000; i++) {
+      //       let date = new Date();
+      //     }
+      //     console.log(m.nama);
+      //   });
+      //   console.log("--- Selesai ---");
+
+      // Asynchronous Callback
+      //   function getDataMahasiswa(url, success, error) {
+      //     let xhr = new XMLHttpRequest();
+
+      //     xhr.onreadystatechange = function () {
+      //       if (xhr.readyState === 4) {
+      //         if (xhr.status === 200) {
+      //           success(xhr.response);
+      //         } else if (xhr.status === 404) {
+      //           error();
+      //         }
+      //       }
+      //     };
+
+      //     xhr.open("get", url);
+      //     xhr.send();
+      //   }
+
+      //   console.log("--- Mulai ---");
+      //   getDataMahasiswa(
+      //     "data/mahasiswa.json",
+      //     (result) => {
+      //       const mhs = JSON.parse(result);
+      //       mhs.forEach((m) => {
+      //         console.log(m.nama);
+      //       });
+      //     },
+      //     (e) => {
+      //       console.log("Maaf Halaman yang Anda Kunjungi tidak Tersedia.");
+      //     }
+      //   );
+      //   console.log("--- Selesai ---");
+
+      // Asynchronous Callback Pakai JQuery
+      console.log("--- Mulai ---");
+      $.ajax({
+        url: "data/mahasiswa.json",
+        success: (mhs) => {
+          mhs.forEach((m) => {
+            console.log(m.nama);
+          });
+        },
+        error: (e) => {
+          console.log(e.responseText);
+          console.log("Maaf Halaman yang Anda Kunjungi tidak Tersedia.");
+        },
+      });
+      console.log("--- Selesai ---");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+[
+  {
+    "nama": "Gerald Alessandro Timothy",
+    "nim": "2018420126",
+    "email": "alendro25@gmail.com",
+    "jurusan": "Teknik Informatika",
+    "idDosenWali": 1
+  },
+  {
+    "nama": "Aditya Hernanda",
+    "nim": "2018410002",
+    "email": "adityahernanda054@gmail.com",
+    "jurusan": "Teknik Sipil",
+    "idDosenWali": 2
+  },
+  {
+    "nama": "Ibrahim Al-Fauzan",
+    "nim": "2018420100",
+    "email": "aimfauzan@gmail.com",
+    "jurusan": "Teknik Geomatika",
+    "idDosenWali": 3
+  }
+]
